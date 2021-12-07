@@ -1,19 +1,13 @@
-import { inject, observer } from 'mobx-react';
+import { inject } from 'mobx-react';
 import * as React from 'react';
 import NumberFormat from 'react-number-format';
 import { Link } from 'react-router-dom';
-import { Container, Card, CardBody, Row, Col, CardTitle, CardText, Form, FormGroup, Input, Label, InputGroup, InputGroupText, Button, CardSubtitle, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
+import { Container, Card, Row, Col, CardTitle, CardText, Input, Label, InputGroup, InputGroupText, CardSubtitle, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
 import { AppState } from '../..';
-import { incomeInfoModel } from '../Home';
-
-interface State {
-    incomeInfo: incomeInfoModel
-}
 
 @inject("IncomeStore")
-@observer
 class Result extends React.Component<AppState> {
-    constructor(props: any) {
+    constructor(props) {
         super(props)
     }
 
@@ -22,7 +16,7 @@ class Result extends React.Component<AppState> {
             <div className="animated fadeIn" style={{ height: '100%' }}>
                 <Container className="wrapper h-100" style={{ height: '100%' }}>
                     <Row style={{ height: '100%', padding: '60px 80px' }}>
-                        <Col>
+                        <Col style={{ height: '100%' }}>
                             <Card
                                 className="card4"
                                 style={{ backgroundColor: 'white', height: '100%', paddingLeft: '16px', paddingRight: '16px', border: 'none', borderRadius: '0' }}>
@@ -80,19 +74,20 @@ class Result extends React.Component<AppState> {
                                 <Link to="/" className="go-back">Go back to previous screen</Link>
                             </Card>
                         </Col>
-                        <Col>
+                        <Col style={{ height: '100%' }}>
                             <Card
                                 className="card4"
                                 style={{ height: '100%', backgroundImage: "url(/images/Background.svg)", border: 'none', borderRadius: '0', paddingLeft: '16px', paddingRight: '16px' }}
                             >
-                                <CardTitle className="label-white">
+                                <CardSubtitle className="label-white">
                                     Your estimated taxable income is:
-                                </CardTitle>
-                                <CardText className="text-center" outline={true} style={{ background: 'white', borderRadius: '3px'}}>
+                                </CardSubtitle>
+                                <CardText className="text-center" style={{ background: 'white', borderRadius: '3px' }}>
                                     <NumberFormat
                                         id="taxIncome"
                                         name="taxIncome"
                                         value={this.props.IncomeStore.incomeInfo?.tax}
+                                        defaultValue={"0.00"}
                                         thousandSeparator={true}
                                         disabled={true}
                                         prefix={'$'}
@@ -101,7 +96,6 @@ class Result extends React.Component<AppState> {
                                         className="card4-income"
                                     />
                                 </CardText>
-
                                 <CardSubtitle className="label-white">
                                     Breakdown
                                 </CardSubtitle>
@@ -122,7 +116,6 @@ class Result extends React.Component<AppState> {
                                         <ListGroupItemText>
                                             $18,201 - $45,000
                                             <span style={{ float: 'right' }}>${this.props.IncomeStore.breakdownInfo?.breakdown2}</span>
-
                                         </ListGroupItemText>
                                     </ListGroupItem>
                                     <ListGroupItem>
@@ -153,9 +146,7 @@ class Result extends React.Component<AppState> {
                                         </ListGroupItemText>
                                     </ListGroupItem>
                                 </ListGroup>
-
                             </Card>
-
                         </Col>
                     </Row>
 

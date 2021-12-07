@@ -49,13 +49,13 @@ body,
 .app {
   height: 100%;
 }
-.wrapper {
-  /* background: #ffffff;
-  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
-  border-radius: 5px; */
-  background-color: white;
-}
 
+/* Custom CSS */
+.wrapper {
+  background: #ffffff;
+  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
 .card1 {
   height: 100%;
   background-position: center;
@@ -75,12 +75,6 @@ body,
   justify-content: center;
 }
 .card-title {
-  /* position: absolute;
-width: 226px;
-height: 58px;
-left: 78px;
-top: 160px; */
-
   font-family: Lato;
   font-style: normal;
   font-weight: bold;
@@ -89,11 +83,6 @@ top: 160px; */
   color: #ffffff;
 }
 .card-subtitle {
-  /* position: absolute;
-width: 264px;
-height: 38px;
-left: 78px;
-top: 220px; */
   font-family: Lato;
   font-style: normal;
   font-weight: normal;
@@ -157,10 +146,5 @@ top: 220px; */
   font-weight: bold;
   font-size: 36px;
   line-height: 43px;
-
   color: #8477c9;
-}
-.list-group-item {
-  margin:5px 0;
-  border-radius: 3px;
 }

@@ -1,15 +1,12 @@
 import * as React from 'react';
-// import { HashRouter, Switch, Route, Redirect, withRouter, RouterProps } from "react-router-dom";
-import { observer, Provider, inject } from "mobx-react";
+import { inject } from "mobx-react";
 import Result from './views/Result';
 import {
-    BrowserRouter as Router,
     Route,
-    Link,
     Routes
 } from "react-router-dom";
 import Home from './views/Home';
-import { incomeStore, IncomeStore } from './stores/IncomeStore';
+import { IncomeStore } from './stores/IncomeStore';
 
 const routes = {
     '/': 'Home',
@@ -18,7 +15,6 @@ const routes = {
 export default routes;
 
 @inject("IncomeStore")
-@observer
 export class MainRouter extends React.Component<{ IncomeStore?: IncomeStore },{}>
 {
     constructor(props) {

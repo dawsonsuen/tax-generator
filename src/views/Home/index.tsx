@@ -1,10 +1,9 @@
-import { observable, action } from 'mobx';
+import { observable } from 'mobx';
 import * as React from 'react';
-import { Route, RouterProps, Routes } from 'react-router-dom';
-import { Button, Card, CardBody, CardSubtitle, CardText, CardTitle, Col, FormGroup, Input, InputGroup, Label, Row, Table, Container, Form, InputGroupText } from 'reactstrap';
-import { Link, Navigate } from "react-router-dom";
-import Result from '../Result';
-import { inject, observer } from 'mobx-react';
+import { RouterProps } from 'react-router-dom';
+import { Button, Card, CardText, CardTitle, Col, FormGroup, Input, InputGroup, Label, Row, Container, Form, InputGroupText } from 'reactstrap';
+import { Navigate } from "react-router-dom";
+import { inject } from 'mobx-react';
 import { AppState } from '../..';
 import NumberFormat from 'react-number-format';
 import '../../App.css';
@@ -14,7 +13,6 @@ interface State {
 }
 
 @inject("IncomeStore")
-@observer
 class Home extends React.Component<AppState & RouterProps, State> {
     constructor(props: any) {
         super(props);
@@ -38,6 +36,7 @@ class Home extends React.Component<AppState & RouterProps, State> {
         var breakdown4 = 0;
         var breakdown5 = 0;
 
+        // Tax calculator
         if (taxIncome <= 18200) {
             tax = 0;
             breakdown2 = 0;
@@ -89,11 +88,9 @@ class Home extends React.Component<AppState & RouterProps, State> {
         this.setState({
             isGenerated: true
         })
-
     }
 
     render() {
-
         if (this.state.isGenerated) {
             return <Navigate to={"/result"} />
         }
@@ -113,11 +110,10 @@ class Home extends React.Component<AppState & RouterProps, State> {
                                 <CardText className="card-subtitle">
                                     The free and simple online tax calculator.
                                 </CardText>
-
                             </Card>
                         </Col>
                         <Col>
-                            <Card className="card2" style={{ height: '100%', paddingLeft: '16px', paddingRight: '16px', border:'0' }}>
+                            <Card className="card2" style={{ height: '100%', paddingLeft: '16px', paddingRight: '16px', border: '0' }}>
                                 <CardTitle className="heading-2">
                                     Caculate you tax
                                 </CardTitle>
@@ -207,7 +203,6 @@ class Home extends React.Component<AppState & RouterProps, State> {
                                     </FormGroup>
                                 </Form>
                             </Card>
-
                         </Col>
                     </Row>
                 </Container>
