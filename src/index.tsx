@@ -1,13 +1,28 @@
+import { Provider } from 'mobx-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from "react-router-dom";
+import { MainRouter } from './routes';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { incomeStore, IncomeStore } from './stores/IncomeStore';
+
+export interface AppState {
+  IncomeStore?: IncomeStore
+}
+
+const state = {
+  IncomeStore: incomeStore
+} as AppState;
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider {...state} url={window.location.hash} >
+    <BrowserRouter>
+      <MainRouter />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 
@@ -15,3 +30,5 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+

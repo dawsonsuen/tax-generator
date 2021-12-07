@@ -36,3 +36,131 @@
     transform: rotate(360deg);
   }
 }
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+  height: 100%;
+}
+
+.app {
+  height: 100%;
+}
+.wrapper {
+  /* background: #ffffff;
+  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
+  border-radius: 5px; */
+  background-color: white;
+}
+
+.card1 {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+}
+.card2 {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+}
+.card4 {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+}
+.card-title {
+  /* position: absolute;
+width: 226px;
+height: 58px;
+left: 78px;
+top: 160px; */
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 58px;
+  color: #ffffff;
+}
+.card-subtitle {
+  /* position: absolute;
+width: 264px;
+height: 38px;
+left: 78px;
+top: 220px; */
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+}
+.heading-2 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+  color: #000000;
+  /* Inside Auto Layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 16px 0px;
+}
+.label {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000000;
+}
+.input-content {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+.go-back {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration-line: underline;
+  color: #8477c9;
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+  margin: 16px 0px;
+}
+.label-white {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+}
+.card4-income {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 43px;
+
+  color: #8477c9;
+}
+.list-group-item {
+  margin:5px 0;
+  border-radius: 3px;
+}
